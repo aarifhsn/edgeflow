@@ -1,0 +1,444 @@
+openapi: 3.0.3
+info:
+  title: edgeflow
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/categories:
+    get:
+      summary: ''
+      operationId: getApiCategories
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: DarkKhaki
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                    -
+                      id: 2
+                      name: MediumAquaMarine
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                    -
+                      id: 3
+                      name: Crimson
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                    -
+                      id: 4
+                      name: Cornsilk
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                    -
+                      id: 5
+                      name: LimeGreen
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: DarkKhaki
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      -
+                        id: 2
+                        name: MediumAquaMarine
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      -
+                        id: 3
+                        name: Crimson
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      -
+                        id: 4
+                        name: Cornsilk
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      -
+                        id: 5
+                        name: LimeGreen
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: DarkKhaki
+                        created_at:
+                          type: string
+                          example: '11 hours ago'
+                        updated_at:
+                          type: string
+                          example: '11 hours ago'
+      tags:
+        - Endpoints
+      security: []
+  '/api/categories/{id}':
+    get:
+      summary: ''
+      operationId: getApiCategoriesId
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    name: DarkKhaki
+                    created_at: '11 hours ago'
+                    updated_at: '11 hours ago'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: DarkKhaki
+                      created_at:
+                        type: string
+                        example: '11 hours ago'
+                      updated_at:
+                        type: string
+                        example: '11 hours ago'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the category.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/posts:
+    get:
+      summary: ''
+      operationId: getApiPosts
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      category:
+                        id: 2
+                        name: MediumAquaMarine
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      title: 'Placeat voluptatem sequi non et fugit voluptatibus.'
+                      content: "Silence all round, if you cut your finger VERY deeply with a lobster as a boon, Was kindly permitted to pocket the spoon: While the Duchess said in an undertone, 'important--unimportant--unimportant--important--' as if he would not allow without knowing how old it was, even before she found her."
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                    -
+                      id: 2
+                      category:
+                        id: 5
+                        name: LimeGreen
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      title: 'Laborum explicabo repellat temporibus dolore reprehenderit.'
+                      content: "Mabel! I'll try and say \"Who am I to get an opportunity of taking it away. She did not like to have no idea what to do, and in his sleep, 'that \"I like what I say--that's the same solemn tone, only changing the order of the cupboards as she spoke. Alice did not wish to offend the Dormouse began in."
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                    -
+                      id: 3
+                      category:
+                        id: 1
+                        name: DarkKhaki
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      title: 'Ut consequuntur et quia ut.'
+                      content: "Rabbit was no 'One, two, three, and away,' but they were IN the well,' Alice said very politely, 'if I had not long to doubt, for the fan and gloves, and, as she spoke. Alice did not like to hear the very middle of one! There ought to go nearer till she heard a little worried. 'Just about as much."
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                    -
+                      id: 4
+                      category:
+                        id: 1
+                        name: DarkKhaki
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      title: 'Explicabo dolor quo quae et qui alias.'
+                      content: "I shall only look up and leave the court; but on the twelfth?' Alice went on at last, with a little before she had hurt the poor animal's feelings. 'I quite agree with you,' said the Duchess; 'and that's a fact.' Alice did not get dry again: they had to stoop to save her neck kept getting."
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                    -
+                      id: 5
+                      category:
+                        id: 5
+                        name: LimeGreen
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      title: 'Aut architecto ut eum suscipit natus.'
+                      content: "Gryphon as if she did not like to have got altered.' 'It is wrong from beginning to feel which way I want to see what was coming. It was as steady as ever; Yet you turned a corner, 'Oh my ears and the pool a little more conversation with her head to hide a smile: some of the court and got behind."
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                    -
+                      id: 6
+                      category:
+                        id: 3
+                        name: Crimson
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      title: 'Sint ea ea consequatur exercitationem recusandae molestias aut.'
+                      content: "Lizard, who seemed to rise like a steam-engine when she was in the morning, just time to be sure, this generally happens when one eats cake, but Alice had been running half an hour or so there were three gardeners at it, and found herself falling down a very hopeful tone though), 'I won't indeed!'."
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                    -
+                      id: 7
+                      category:
+                        id: 5
+                        name: LimeGreen
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      title: 'Placeat maiores omnis officiis placeat.'
+                      content: "King. 'Nearly two miles high,' added the Dormouse, who seemed too much overcome to do this, so that it was impossible to say it any longer than that,' said the Duchess, digging her sharp little chin. 'I've a right to grow here,' said the Gryphon remarked: 'because they lessen from day to day.'."
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                    -
+                      id: 8
+                      category:
+                        id: 4
+                        name: Cornsilk
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      title: 'Itaque delectus architecto fugiat eius.'
+                      content: "Alice. 'That's very important,' the King eagerly, and he went on again:-- 'You may go,' said the March Hare. Visit either you like: they're both mad.' 'But I don't keep the same year for such dainties would not join the dance? Will you, won't you, will you, won't you, will you, won't you, will."
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                    -
+                      id: 9
+                      category:
+                        id: 4
+                        name: Cornsilk
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      title: 'Architecto praesentium doloremque perferendis praesentium similique hic consectetur.'
+                      content: "How I wonder if I shall never get to twenty at that rate! However, the Multiplication Table doesn't signify: let's try the effect: the next question is, Who in the last word with such a tiny little thing!' said the Cat, 'or you wouldn't squeeze so.' said the Duchess, 'chop off her knowledge, as."
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                    -
+                      id: 10
+                      category:
+                        id: 4
+                        name: Cornsilk
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      title: 'Ullam alias magni veniam sequi assumenda rerum aut.'
+                      content: "I like being that person, I'll come up: if not, I'll stay down here with me! There are no mice in the sea. But they HAVE their tails fast in their mouths--and they're all over with fright. 'Oh, I beg your acceptance of this pool? I am now? That'll be a LITTLE larger, sir, if you don't like the."
+                      created_at: '11 hours ago'
+                      updated_at: '11 hours ago'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        category:
+                          id: 2
+                          name: MediumAquaMarine
+                          created_at: '11 hours ago'
+                          updated_at: '11 hours ago'
+                        title: 'Placeat voluptatem sequi non et fugit voluptatibus.'
+                        content: "Silence all round, if you cut your finger VERY deeply with a lobster as a boon, Was kindly permitted to pocket the spoon: While the Duchess said in an undertone, 'important--unimportant--unimportant--important--' as if he would not allow without knowing how old it was, even before she found her."
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      -
+                        id: 2
+                        category:
+                          id: 5
+                          name: LimeGreen
+                          created_at: '11 hours ago'
+                          updated_at: '11 hours ago'
+                        title: 'Laborum explicabo repellat temporibus dolore reprehenderit.'
+                        content: "Mabel! I'll try and say \"Who am I to get an opportunity of taking it away. She did not like to have no idea what to do, and in his sleep, 'that \"I like what I say--that's the same solemn tone, only changing the order of the cupboards as she spoke. Alice did not wish to offend the Dormouse began in."
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      -
+                        id: 3
+                        category:
+                          id: 1
+                          name: DarkKhaki
+                          created_at: '11 hours ago'
+                          updated_at: '11 hours ago'
+                        title: 'Ut consequuntur et quia ut.'
+                        content: "Rabbit was no 'One, two, three, and away,' but they were IN the well,' Alice said very politely, 'if I had not long to doubt, for the fan and gloves, and, as she spoke. Alice did not like to hear the very middle of one! There ought to go nearer till she heard a little worried. 'Just about as much."
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      -
+                        id: 4
+                        category:
+                          id: 1
+                          name: DarkKhaki
+                          created_at: '11 hours ago'
+                          updated_at: '11 hours ago'
+                        title: 'Explicabo dolor quo quae et qui alias.'
+                        content: "I shall only look up and leave the court; but on the twelfth?' Alice went on at last, with a little before she had hurt the poor animal's feelings. 'I quite agree with you,' said the Duchess; 'and that's a fact.' Alice did not get dry again: they had to stoop to save her neck kept getting."
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      -
+                        id: 5
+                        category:
+                          id: 5
+                          name: LimeGreen
+                          created_at: '11 hours ago'
+                          updated_at: '11 hours ago'
+                        title: 'Aut architecto ut eum suscipit natus.'
+                        content: "Gryphon as if she did not like to have got altered.' 'It is wrong from beginning to feel which way I want to see what was coming. It was as steady as ever; Yet you turned a corner, 'Oh my ears and the pool a little more conversation with her head to hide a smile: some of the court and got behind."
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      -
+                        id: 6
+                        category:
+                          id: 3
+                          name: Crimson
+                          created_at: '11 hours ago'
+                          updated_at: '11 hours ago'
+                        title: 'Sint ea ea consequatur exercitationem recusandae molestias aut.'
+                        content: "Lizard, who seemed to rise like a steam-engine when she was in the morning, just time to be sure, this generally happens when one eats cake, but Alice had been running half an hour or so there were three gardeners at it, and found herself falling down a very hopeful tone though), 'I won't indeed!'."
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      -
+                        id: 7
+                        category:
+                          id: 5
+                          name: LimeGreen
+                          created_at: '11 hours ago'
+                          updated_at: '11 hours ago'
+                        title: 'Placeat maiores omnis officiis placeat.'
+                        content: "King. 'Nearly two miles high,' added the Dormouse, who seemed too much overcome to do this, so that it was impossible to say it any longer than that,' said the Duchess, digging her sharp little chin. 'I've a right to grow here,' said the Gryphon remarked: 'because they lessen from day to day.'."
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      -
+                        id: 8
+                        category:
+                          id: 4
+                          name: Cornsilk
+                          created_at: '11 hours ago'
+                          updated_at: '11 hours ago'
+                        title: 'Itaque delectus architecto fugiat eius.'
+                        content: "Alice. 'That's very important,' the King eagerly, and he went on again:-- 'You may go,' said the March Hare. Visit either you like: they're both mad.' 'But I don't keep the same year for such dainties would not join the dance? Will you, won't you, will you, won't you, will you, won't you, will."
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      -
+                        id: 9
+                        category:
+                          id: 4
+                          name: Cornsilk
+                          created_at: '11 hours ago'
+                          updated_at: '11 hours ago'
+                        title: 'Architecto praesentium doloremque perferendis praesentium similique hic consectetur.'
+                        content: "How I wonder if I shall never get to twenty at that rate! However, the Multiplication Table doesn't signify: let's try the effect: the next question is, Who in the last word with such a tiny little thing!' said the Cat, 'or you wouldn't squeeze so.' said the Duchess, 'chop off her knowledge, as."
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                      -
+                        id: 10
+                        category:
+                          id: 4
+                          name: Cornsilk
+                          created_at: '11 hours ago'
+                          updated_at: '11 hours ago'
+                        title: 'Ullam alias magni veniam sequi assumenda rerum aut.'
+                        content: "I like being that person, I'll come up: if not, I'll stay down here with me! There are no mice in the sea. But they HAVE their tails fast in their mouths--and they're all over with fright. 'Oh, I beg your acceptance of this pool? I am now? That'll be a LITTLE larger, sir, if you don't like the."
+                        created_at: '11 hours ago'
+                        updated_at: '11 hours ago'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        category:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 2
+                            name:
+                              type: string
+                              example: MediumAquaMarine
+                            created_at:
+                              type: string
+                              example: '11 hours ago'
+                            updated_at:
+                              type: string
+                              example: '11 hours ago'
+                        title:
+                          type: string
+                          example: 'Placeat voluptatem sequi non et fugit voluptatibus.'
+                        content:
+                          type: string
+                          example: "Silence all round, if you cut your finger VERY deeply with a lobster as a boon, Was kindly permitted to pocket the spoon: While the Duchess said in an undertone, 'important--unimportant--unimportant--important--' as if he would not allow without knowing how old it was, even before she found her."
+                        created_at:
+                          type: string
+                          example: '11 hours ago'
+                        updated_at:
+                          type: string
+                          example: '11 hours ago'
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''

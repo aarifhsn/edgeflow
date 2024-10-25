@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Dedoc\Scramble\Scramble;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,4 +18,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+Scramble::registerUiRoute('api-docs');
+
+require __DIR__ . '/auth.php';
